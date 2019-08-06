@@ -1,0 +1,11 @@
+.text-block {
+  padding: 8rem 0;
+  margin: 0 auto;
+  width: 70vw;
+  text-align: center;
+
+  & p {
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+}
