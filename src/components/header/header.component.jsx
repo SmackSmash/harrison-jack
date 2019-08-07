@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './header.styles.scss';
 import { ReactComponent as Logo } from '../../assets/images/logo.svg';
 
@@ -21,21 +21,23 @@ const Header = props => {
   return (
     <header ref={headerRef} className={`header${sticky ? ' sticky' : ''}`}>
       <nav>
-        <ul className='navigation'>
+        <ul className="navigation">
           <li>
-            <NavLink to='/'>Home</NavLink>
+            <NavLink to="/" exact>
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to='/about'>About</NavLink>
+            <NavLink to="/about">About</NavLink>
           </li>
           <li>
-            <Logo className='logo' alt='Logo' />
+            <Logo className="logo" alt="Logo" />
           </li>
           <li>
-            <NavLink to='/galleries'>Galleries</NavLink>
+            <NavLink to="/galleries">Galleries</NavLink>
           </li>
           <li>
-            <NavLink to='/contact'>Contact</NavLink>
+            <NavLink to="/contact">Contact</NavLink>
           </li>
         </ul>
       </nav>
