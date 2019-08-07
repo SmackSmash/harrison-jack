@@ -16,14 +16,14 @@ const HomePage = props => {
       <Helmet>
         <title>Home</title>
       </Helmet>
-      <HeroImage title="//ADVERTISING" right imageSrc={advertisingImage} />
-      <HeroImage title="//INTERIOR" imageSrc={interiorImage} />
-      <HeroImage title="//CHALET" right imageSrc={chaletImage} />
-      <HeroImage title="//WEDDING" imageSrc={weddingImage} />
-      <HeroImage title="//FOOD" link="galleries/food" right imageSrc={foodImage} />
-      <HeroImage title="//LOCATION" imageSrc={locationImage} />
-      <HeroImage title="//PEOPLE" right imageSrc={peopleImage} />
-      <HeroImage title="//PERSONAL" last imageSrc={personalImage} />
+      <HeroImage title="advertising" first right imageSrc={advertisingImage} />
+      <HeroImage title="interiors" imageSrc={interiorImage} />
+      <HeroImage title="chalets" right imageSrc={chaletImage} />
+      <HeroImage title="weddings" imageSrc={weddingImage} />
+      <HeroImage title="food" link="galleries/food" right imageSrc={foodImage} />
+      <HeroImage title="locations" imageSrc={locationImage} />
+      <HeroImage title="people" right imageSrc={peopleImage} />
+      <HeroImage title="personal" last imageSrc={personalImage} />
     </>
   );
 };

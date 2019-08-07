@@ -11,7 +11,7 @@ const FoodPage = props => {
       <Helmet>
         <title>Food Gallery</title>
       </Helmet>
-      <HeroImage title="//FOOD" imageSrc={heroImage} />
+      <HeroImage first imageSrc={heroImage} />
       <TextBlock>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis placerat dolor.

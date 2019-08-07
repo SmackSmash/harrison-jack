@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './header.styles.scss';
 import { ReactComponent as Logo } from '../../assets/images/logo.svg';
 
@@ -30,8 +30,10 @@ const Header = props => {
           <li>
             <NavLink to="/about">About</NavLink>
           </li>
-          <li>
-            <Logo className="logo" alt="Logo" />
+          <li className="logo-container">
+            <Link to="/">
+              <Logo className="logo" alt="Logo" />
+            </Link>
           </li>
           <li>
             <NavLink to="/galleries">Galleries</NavLink>
