@@ -1,5 +1,5 @@
 import React from 'react';
-import GalleryImage from '../gallery-image/gallery-image.component';
+import GalleryImage from '../gallery-item/gallery-item.component';
 import './gallery.styles.scss';
 
 const Gallery = ({ category, numberOfImages }) => {
@@ -10,7 +10,6 @@ const Gallery = ({ category, numberOfImages }) => {
     }
     return <div className="gallery">{imagesArray}</div>;
   };
-
   return getImages();
 };
 

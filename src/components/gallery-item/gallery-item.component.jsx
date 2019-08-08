@@ -1,16 +1,23 @@
 import React, { useRef, useEffect, useState } from 'react';
+import _ from 'lodash';
+import './gallery-item.styles.scss';
 
-const GalleryImage = ({ category, imageNumber }) => {
+const GalleryItem = ({ category, imageNumber }) => {
   const imageRef = useRef(null);
 
   const [spans, setSpans] = useState(0);
 
   useEffect(() => {
     imageRef.current.onload = () => {
-      console.log(imageRef.current.clientHeight);
-      setSpans(Math.floor(imageRef.current.clientHeight / 2));
+      updateSpans();
     };
+    window.addEventListener('resize', _.throttle(updateSpans, 100));
   });
+
+  const updateSpans = () => {
+    console.log('updating');
+    setSpans(Math.floor(imageRef.current.clientHeight / 4) + 2);
+  };
 
   return (
     <div className="item" style={{ gridRowEnd: `span ${spans}` }}>
@@ -26,4 +33,4 @@ const GalleryImage = ({ category, imageNumber }) => {
   );
 };
 
-export default GalleryImage;
+export default GalleryItem;
