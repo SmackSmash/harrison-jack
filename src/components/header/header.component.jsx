@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import './header.styles.scss';
+import _ from 'lodash';
 import { ReactComponent as Logo } from '../../assets/images/logo.svg';
+import './header.styles.scss';
 
 const Header = props => {
   const headerRef = useRef(null);
@@ -9,13 +10,13 @@ const Header = props => {
   const [sticky, setSticky] = useState(false);
 
   useEffect(() => {
-    window.onscroll = () => {
+    window.onscroll = _.throttle(() => {
       if (window.pageYOffset > headerRef.current.clientHeight) {
         setSticky(true);
-      } else if (window.pageYOffset === 0) {
+      } else if (window.pageYOffset < 100) {
         setSticky(false);
       }
-    };
+    }, 100);
   });
 
   return (

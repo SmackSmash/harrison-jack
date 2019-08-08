@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route, BrowserRouter } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import ScrollToTop from './components/scroll-to-top/scroll-to-top.component';
 import Header from './components/header/header.component';
@@ -12,19 +12,17 @@ import './App.styles.scss';
 
 const App = props => {
   return (
-    <>
+    <BrowserRouter>
       <Helmet titleTemplate="HarrisonJack Photography :: %s" />
-      <BrowserRouter>
-        <ScrollToTop>
-          <Header />
-          <Route path="/" exact component={HomePage} />
-          <Route path="/about" exact component={AboutPage} />
-          <Route path="/contact" exact component={ContactPage} />
-          <Route path="/galleries/food" exact component={FoodPage} />
-          <Footer />
-        </ScrollToTop>
-      </BrowserRouter>
-    </>
+      <ScrollToTop>
+        <Header />
+        <Route path="/" exact component={HomePage} />
+        <Route path="/about" exact component={AboutPage} />
+        <Route path="/contact" exact component={ContactPage} />
+        <Route path="/galleries/food" exact component={FoodPage} />
+        <Footer />
+      </ScrollToTop>
+    </BrowserRouter>
   );
 };
 

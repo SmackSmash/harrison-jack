@@ -22,7 +22,7 @@ const FoodPage = props => {
           sem tincidunt sollicitudin vitae vel neque.
         </p>
       </TextBlock>
-      <Gallery />
+      <Gallery category="food" numberOfImages={12} />
     </>
   );
 };

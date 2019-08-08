@@ -3,7 +3,7 @@ import './spinner.styles.scss';
 
 const Spinner = props => {
   return (
-    <div class="spinner">
+    <div className="spinner">
       <div />
       <div />
       <div />

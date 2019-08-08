@@ -34,21 +34,34 @@
       justify-content: flex-end;
     }
 
-    & .hero__page-title {
+    & .page-title {
       opacity: 0;
       color: #fff;
-      background: #000;
+      background: rgba(0, 0, 0, 0.9);
       font-size: 2rem;
       text-transform: uppercase;
       letter-spacing: 1rem;
       padding: 2rem;
       font-weight: 200;
-      transition: all 0.5s ease-out;
+      transition: all 0.7s cubic-bezier(0.35, 0.94, 0.46, 0.96);
       transform: translateY(500px);
+      overflow: hidden;
+
+      & span {
+        display: inline-block;
+        transform: translateY(-100px);
+        opacity: 0;
+        transition: all 0.7s cubic-bezier(0.35, 0.94, 0.46, 0.96);
+      }
 
       &--show {
         opacity: 1;
         transform: translateY(0);
+
+        & span {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       & a {

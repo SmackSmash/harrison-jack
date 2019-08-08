@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Waypoint } from 'react-waypoint';
 import Spinner from '../spinner/spinner.component';
@@ -12,6 +12,10 @@ const HeroImage = ({ imageSrc, title, last, right, link, first }) => {
   const [showImage, setShowImage] = useState(false);
   const [heroTitle, setHeroTitle] = useState(title);
   const [showTitle, setShowTitle] = useState(false);
+
+  useEffect(() => {
+    first && loadImage();
+  });
 
   const loadImage = () => {
     if (!showImage) {
@@ -56,7 +60,7 @@ const HeroImage = ({ imageSrc, title, last, right, link, first }) => {
     <section ref={elementRef} className="hero">
       <Waypoint onEnter={loadImage} />
       {!showImage && <Spinner />}
-      <img src={showImage && imageSrc} alt="Hero" className={showImage ? 'show' : ''} />
+      <img src={showImage ? imageSrc : ''} alt="Hero" className={showImage ? 'show' : ''} />
       <div className="hero__inner">
         {!first && (
           <button onClick={() => handleScroll('up')} className="hero__scroll hero__scroll--up">
@@ -67,13 +71,13 @@ const HeroImage = ({ imageSrc, title, last, right, link, first }) => {
       <Waypoint onEnter={handleWaypointEnter} />
       <div className={`hero__inner${right ? ' hero__inner--right' : ''}`}>
         {title && (
-          <h1 className={`hero__page-title${showTitle ? ' hero__page-title--show' : ''}`}>
+          <h1 className={`page-title${showTitle ? ' page-title--show' : ''}`}>
             {link ? (
               <Link onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} to={link}>
                 {`//${heroTitle}`}
               </Link>
             ) : (
-              `//${heroTitle}`
+              <span>{`//${heroTitle}`}</span>
             )}
           </h1>
         )}
