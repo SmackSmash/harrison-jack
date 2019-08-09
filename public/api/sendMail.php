@@ -1,8 +1,9 @@
 <?php
 
+//REMOVE FOR PRODUCTION!!!
 header("Access-Control-Allow-Origin: *");
 
-if(isset($_POST["name"])){
+if(isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["message"])){
     $name        = $_POST["name"];
     $email       = $_POST["email"];
     $phone       = $_POST["phone"];
@@ -19,31 +20,17 @@ if(isset($_POST["name"])){
     $message .= '<br /><br />';
     $message .= $userMessage;
     $message = stripslashes($message);
-    $headers = 'From: test@testicles.com'."\r\n";
+    $headers = 'From: contactform@harrisonjack.co.uk'."\r\n";
     $headers .= 'Reply-To: '.$email."\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
     if(mail($to, $subject, $message, $headers)){
-        // Success!
+        header("HTTP/1.1 200 OK");
     }else{
-        // Failure!
+        header("HTTP/1.1 500 Internal Server Error");
     };
+} else {
+    header("HTTP/1.1 401 Unauthorized");
 };
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Email Sender</title>
-</head>
-
-<body>
-    <h1>Will it work?</h1>
-</body>
-
-</html>

@@ -9,10 +9,13 @@
   }
 }
 
-* {
+*,
+*:after,
+*::before {
   box-sizing: border-box;
   font-family: 'Raleway', sans-serif;
   line-height: 1.6rem;
+  outline: none;
 }
 body {
   margin: 0;
@@ -21,6 +24,31 @@ body {
 ::selection {
   background: yellow;
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px white inset !important;
+}
 .non-image-page {
   padding-top: 100px;
+  max-width: 1000px;
+  min-height: calc(100vh - 51px);
+  margin: 0 auto;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 2rem;
+  border-left: dashed #ddd;
+
+  & h1 {
+    text-transform: uppercase;
+    letter-spacing: 0.8rem;
+    border-bottom: solid;
+    display: inline-block;
+    text-align: center;
+    margin: 50px auto;
+    width: auto;
+    padding: 1rem 0 2rem;
+  }
 }

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Waypoint } from 'react-waypoint';
 import Spinner from '../spinner/spinner.component';
@@ -13,11 +13,8 @@ const HeroImage = ({ imageSrc, title, last, right, link, first }) => {
   const [heroTitle, setHeroTitle] = useState(title);
   const [showTitle, setShowTitle] = useState(false);
 
-  useEffect(() => {
-    first && loadImage();
-  });
-
   const loadImage = () => {
+    console.log('Loading image ' + imageSrc);
     if (!showImage) {
       const image = new Image();
       image.onload = () => {
@@ -58,7 +55,7 @@ const HeroImage = ({ imageSrc, title, last, right, link, first }) => {
 
   return (
     <section ref={elementRef} className="hero">
-      <Waypoint onEnter={loadImage} />
+      <Waypoint bottomOffset={-500} onEnter={loadImage} />
       {!showImage && <Spinner />}
       <img src={showImage ? imageSrc : ''} alt="Hero" className={showImage ? 'show' : ''} />
       <div className="hero__inner">

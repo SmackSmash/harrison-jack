@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './gallery.component.scss';
+import './gallery.styles.scss';
 
 const Gallery = props => {
   const [HTML, setHTML] = useState([]);

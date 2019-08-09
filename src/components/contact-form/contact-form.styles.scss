@@ -1,0 +1,106 @@
+@import '../../sass/variables';
+
+.form-container {
+  position: relative;
+}
+
+.contact-form {
+  display: block;
+  width: 100%;
+
+  &--sending {
+    opacity: 0.2;
+  }
+
+  &__button-container {
+    display: flex;
+
+    &__button {
+      display: block;
+      border: none;
+      font-size: 1rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      text-align: left;
+      cursor: pointer;
+      letter-spacing: 0.2rem;
+      transition: flex-grow 0.3s cubic-bezier(1, -0.14, 0, 1), opacity 0.3s ease-out;
+
+      &:hover {
+        flex-grow: 30;
+      }
+
+      &--black {
+        background: #000;
+        color: #fff;
+        flex-grow: 3;
+      }
+
+      &--white {
+        background: #fff;
+        color: #000;
+        border: solid 1px #000;
+        flex-grow: 1;
+      }
+
+      &:disabled {
+        opacity: 0.2;
+      }
+    }
+  }
+
+  &__field {
+    position: relative;
+    display: block;
+    margin: 0 0 2rem;
+
+    &--required:after {
+      content: '*';
+      position: absolute;
+      right: -25px;
+      top: 0;
+      font-weight: 200;
+      font-size: 5rem;
+      color: #ccc;
+    }
+
+    & input {
+      display: block;
+      width: 100%;
+      border: none;
+      border-bottom: solid 1px #000;
+      font-size: 1rem;
+      outline: none;
+      padding: 0 1rem;
+    }
+
+    & textarea {
+      width: 100%;
+      resize: vertical;
+      font-size: 1rem;
+      padding: 1rem;
+      border: solid 1px #000;
+      min-height: 150px;
+    }
+
+    &__error {
+      color: #fff;
+      background: $errorRed;
+      padding: 0.5rem;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        top: -10px;
+        right: 20px;
+        border-color: $errorRed transparent;
+        border-style: solid;
+        border-width: 0px 10px 10px 10px;
+        height: 0px;
+        width: 0px;
+        content: '';
+      }
+    }
+  }
+}

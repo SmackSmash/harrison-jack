@@ -30,6 +30,11 @@
       animation-delay: -0.15s;
     }
   }
+
+  &--dark div {
+    border: 6px solid #000;
+    border-color: #000 transparent transparent transparent;
+  }
 }
 
 @keyframes spinner {
