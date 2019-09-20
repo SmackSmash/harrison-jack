@@ -8,7 +8,7 @@ import HomePage from './pages/home/home-page.component';
 import AboutPage from './pages/about/about-page.component';
 import GalleriesPage from './pages/galleries/galleries-page.component';
 import ContactPage from './pages/contact/contact-page.component';
-import FoodPage from './pages/food/food-page.component';
+import GalleryPage from './pages/gallery/gallery-page.component';
 import './App.styles.scss';
 
 const App = props => {
@@ -21,7 +21,7 @@ const App = props => {
         <Route path="/about" exact component={AboutPage} />
         <Route path="/galleries" exact component={GalleriesPage} />
         <Route path="/contact" exact component={ContactPage} />
-        <Route path="/galleries/food" exact component={FoodPage} />
+        <Route path="/gallery/:category" exact component={GalleryPage} />
         <Footer />
       </ScrollToTop>
     </BrowserRouter>

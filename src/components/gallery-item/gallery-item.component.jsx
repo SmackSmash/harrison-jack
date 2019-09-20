@@ -17,7 +17,7 @@ const GalleryItem = ({ category, imageNumber }) => {
   });
 
   const updateSpans = () => {
-    setSpans(Math.floor(imageRef.current.clientHeight / 4) + 2);
+    imageRef.current && setSpans(Math.floor(imageRef.current.clientHeight / 4) + 2);
   };
 
   const loadImage = () => {

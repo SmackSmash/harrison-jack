@@ -20,7 +20,8 @@ if(isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["message"])){
     $message .= '<br /><br />';
     $message .= $userMessage;
     $message = stripslashes($message);
-    $headers = 'From: contactform@harrisonjack.co.uk'."\r\n";
+    // $headers = 'From: contactform@harrisonjack.co.uk'."\r\n";
+    $headers = 'From: contactform@danmoffat.rf.gd'."\r\n";
     $headers .= 'Reply-To: '.$email."\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";

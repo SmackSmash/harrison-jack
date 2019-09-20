@@ -14,7 +14,6 @@ const HeroImage = ({ imageSrc, title, last, right, link, first }) => {
   const [showTitle, setShowTitle] = useState(false);
 
   const loadImage = () => {
-    console.log('Loading image ' + imageSrc);
     if (!showImage) {
       const image = new Image();
       image.onload = () => {
