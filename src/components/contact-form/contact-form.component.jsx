@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import axios from 'axios';
+import { submitContact } from '../../actions';
 import Spinner from '../spinner/spinner.component';
 import './contact-form.styles.scss';
 
@@ -26,24 +27,13 @@ const renderTextarea = ({ name, placeholder, input, required, meta }) => {
   );
 };
 
-const ContactForm = ({ handleSubmit, pristine, reset, submitting }) => {
+const ContactForm = ({ handleSubmit, pristine, reset, submitting, submitContact }) => {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
 
-  const onSubmit = async ({ name, email, phone, message }) => {
+  const onSubmit = async formData => {
+    submitContact(formData);
     setSending(true);
-    const formData = new FormData();
-    formData.set('name', name);
-    formData.set('email', email);
-    formData.set('phone', phone);
-    formData.set('message', message);
-    // REMEMBER TO CHANGE FOR PRODUCTION!!!
-    const response = await axios.post('http://build.harrisonjack.co.uk/api/sendMail.php', formData);
-    console.log(response);
-    if (response.status === 200) {
-      setSending(false);
-      setSent(true);
-    }
   };
 
   if (sent) return <div>You already sent an email ya dummy!</div>;
@@ -98,4 +88,7 @@ const validate = ({ name, email, phone, message }) => {
   return errors;
 };
 
-export default reduxForm({ form: 'contact', validate })(ContactForm);
+export default connect(
+  null,
+  { submitContact }
+)(reduxForm({ form: 'contact', validate })(ContactForm));

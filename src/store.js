@@ -1,6 +1,6 @@
 import { createStore, compose, applyMiddleware } from 'redux';
-// import thunk from 'redux-thunk';
 import createSagaMiddleware from 'redux-saga';
+import { watchSubmitContactForm } from './sagas/contactFormSaga';
 import rootReducer from './reducers';
 
 const sagaMiddleware = createSagaMiddleware();
@@ -11,6 +11,6 @@ const enhancers = composeEnhancers(applyMiddleware(sagaMiddleware));
 
 const store = createStore(rootReducer, {}, enhancers);
 
-// sagaMiddleware.use()
+sagaMiddleware.run(watchSubmitContactForm);
 
 export default store;
