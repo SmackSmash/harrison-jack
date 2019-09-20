@@ -9,7 +9,7 @@ import AboutPage from './pages/about/about-page.component';
 import GalleriesPage from './pages/galleries/galleries-page.component';
 import ContactPage from './pages/contact/contact-page.component';
 import GalleryPage from './pages/gallery/gallery-page.component';
-import './App.styles.scss';
+import './app.styles.scss';
 
 const App = props => {
   return (
