@@ -5,7 +5,6 @@ import Spinner from '../spinner/spinner.component';
 import './contact-form.styles.scss';
 
 const renderInput = ({ name, type, placeholder, input, required, meta }) => {
-  console.log(meta);
   return (
     <div className={`contact-form__field${required ? ' contact-form__field--required' : ''}`}>
       <input name={name} id={name} type={type} placeholder={placeholder} {...input} />
@@ -29,6 +28,7 @@ const renderTextarea = ({ name, placeholder, input, required, meta }) => {
 
 const ContactForm = ({ handleSubmit, pristine, reset, submitting }) => {
   const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
 
   const onSubmit = async ({ name, email, phone, message }) => {
     setSending(true);
@@ -39,11 +39,14 @@ const ContactForm = ({ handleSubmit, pristine, reset, submitting }) => {
     formData.set('message', message);
     // REMEMBER TO CHANGE FOR PRODUCTION!!!
     const response = await axios.post('http://build.harrisonjack.co.uk/api/sendMail.php', formData);
+    console.log(response);
     if (response.status === 200) {
       setSending(false);
+      setSent(true);
     }
   };
 
+  if (sent) return <div>You already sent an email ya dummy!</div>;
   return (
     <div className="form-container">
       {sending && <Spinner dark />}
