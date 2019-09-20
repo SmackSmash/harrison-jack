@@ -10,7 +10,6 @@
   position: fixed;
   top: 0;
   animation: fadein 1s;
-  border-bottom: solid 1px #000;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 
   & nav {
@@ -55,7 +54,7 @@
     & .logo-container {
       width: 193px;
       overflow: hidden;
-      transition: all 0.3s ease-in-out, opacity 0.1s ease-out;
+      transition: all 0.1s ease-in-out;
     }
     & .logo {
       fill: #fff;

@@ -1,9 +1,12 @@
 .about-container {
-  padding-bottom: 100px;
   display: flex;
   justify-content: space-between;
 
   & div {
     max-width: 48%;
+  }
+
+  & img {
+    max-width: 100%;
   }
 }

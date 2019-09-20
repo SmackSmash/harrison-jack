@@ -69,10 +69,10 @@
       display: block;
       width: 100%;
       border: none;
-      border-bottom: solid 1px #000;
       font-size: 1rem;
       outline: none;
-      padding: 0 1rem;
+      padding: 1rem;
+      border-bottom: solid 5px #ddd;
     }
 
     & textarea {
@@ -80,8 +80,9 @@
       resize: vertical;
       font-size: 1rem;
       padding: 1rem;
-      border: solid 1px #000;
+      border: none;
       min-height: 150px;
+      border-bottom: solid 5px #ddd;
     }
 
     &__error {

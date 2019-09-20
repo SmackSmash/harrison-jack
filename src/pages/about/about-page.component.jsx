@@ -4,7 +4,7 @@ import './about-page.styles.scss';
 const AboutPage = props => {
   return (
     <div className="non-image-page">
-      <h1>About HarrisonJack</h1>
+      <h1>A little bit about us</h1>
       <div className="about-container">
         <div>
           <p>
