@@ -28,7 +28,6 @@ function* submitContactFormAsync(action) {
           payload: `Error ${response.status}: Your message could not be sent`
         });
   } catch (error) {
-    console.log(error);
     yield put({
       type: SUBMIT_CONTACT_FORM_ERROR,
       payload: error.message

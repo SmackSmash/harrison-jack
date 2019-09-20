@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { submitContact } from '../../actions';
@@ -27,16 +27,28 @@ const renderTextarea = ({ name, placeholder, input, required, meta }) => {
   );
 };
 
-const ContactForm = ({ handleSubmit, pristine, reset, submitting, submitContact }) => {
-  const [sending, setSending] = useState(false);
-  const [sent, setSent] = useState(false);
-
+const ContactForm = ({
+  handleSubmit,
+  pristine,
+  reset,
+  submitting,
+  submitContact,
+  sent,
+  sending,
+  sendError
+}) => {
   const onSubmit = async formData => {
     submitContact(formData);
-    setSending(true);
   };
 
-  if (sent) return <div>You already sent an email ya dummy!</div>;
+  if (sent) return <p>Thanks for getting in touch! We'll get back to you as soon as possible.</p>;
+  if (sendError)
+    return (
+      <>
+        <p>There was an error sending your message. Details below:</p>
+        <p>{sendError}</p>
+      </>
+    );
   return (
     <div className="form-container">
       {sending && <Spinner dark />}
@@ -88,7 +100,13 @@ const validate = ({ name, email, phone, message }) => {
   return errors;
 };
 
+const mapStateToProps = ({ contactForm: { sent, sending, error } }) => ({
+  sent,
+  sending,
+  sendError: error
+});
+
 export default connect(
-  null,
+  mapStateToProps,
   { submitContact }
 )(reduxForm({ form: 'contact', validate })(ContactForm));
