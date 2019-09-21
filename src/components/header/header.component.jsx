@@ -13,7 +13,7 @@ const Header = props => {
     window.onscroll = _.throttle(() => {
       if (window.pageYOffset > headerRef.current.clientHeight) {
         setSticky(true);
-      } else if (window.pageYOffset < 100) {
+      } else if (window.pageYOffset < 300) {
         setSticky(false);
       }
     }, 100);
