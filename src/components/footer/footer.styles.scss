@@ -1,12 +1,15 @@
 .footer {
-  background: #222;
   display: flex;
   justify-content: space-around;
+  padding-bottom: 2rem;
 
   &__copyright {
-    color: #fff;
     text-transform: uppercase;
     letter-spacing: 0.3rem;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+
+    &:before {
+      content: '// ';
+    }
   }
 }
