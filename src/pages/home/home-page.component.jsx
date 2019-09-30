@@ -9,6 +9,7 @@ import foodImage from '../../assets/images/galleries/food/large.jpg';
 import locationImage from '../../assets/images/galleries/locations/large.jpg';
 import peopleImage from '../../assets/images/galleries/people/large.jpg';
 import personalImage from '../../assets/images/galleries/personal/large.jpg';
+import Footer from '../../components/footer/footer.component';
 
 const HomePage = props => {
   return (
@@ -24,6 +25,7 @@ const HomePage = props => {
       <HeroImage title="locations" imageSrc={locationImage} />
       <HeroImage title="people" right imageSrc={peopleImage} />
       <HeroImage title="personal" last imageSrc={personalImage} />
+      <Footer />
     </>
   );
 };
