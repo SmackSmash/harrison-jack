@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import _ from 'lodash';
 import { ReactComponent as Logo } from '../../assets/images/logo.svg';
+import BurgerIcon from '../burger-icon/burger-icon.component';
 import './header.styles.scss';
 
 const Header = props => {
@@ -43,6 +44,7 @@ const Header = props => {
             <NavLink to="/contact">Contact</NavLink>
           </li>
         </ul>
+        <BurgerIcon />
       </nav>
     </header>
   );
