@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Link, NavLink } from 'react-router-dom';
 import _ from 'lodash';
-import { ReactComponent as Logo } from '../../assets/images/logo.svg';
-import BurgerIcon from '../burger-icon/burger-icon.component';
+import Navigation from './navigation/navigation.component';
+import BurgerIcon from './burger-icon/burger-icon.component';
 import './header.styles.scss';
 
 const Header = props => {
@@ -23,27 +22,7 @@ const Header = props => {
   return (
     <header ref={headerRef} className={`header${sticky ? ' sticky' : ''}`}>
       <nav>
-        <ul className="navigation">
-          <li>
-            <NavLink to="/" exact>
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/about">About</NavLink>
-          </li>
-          <li className="logo-container">
-            <Link to="/">
-              <Logo className="logo" alt="Logo" />
-            </Link>
-          </li>
-          <li>
-            <NavLink to="/galleries">Galleries</NavLink>
-          </li>
-          <li>
-            <NavLink to="/contact">Contact</NavLink>
-          </li>
-        </ul>
+        <Navigation />
         <BurgerIcon />
       </nav>
     </header>
