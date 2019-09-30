@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import HeroImage from '../../components/hero-image/hero-image.component';
 import TextBlock from '../../components/text-block/text-block.component';
 import Gallery from '../../components/gallery/gallery.component';
+import Footer from '../../components/footer/footer.component';
 import galleriesData from '../../data/galleries';
 
 const FoodPage = ({
@@ -21,6 +22,7 @@ const FoodPage = ({
         <p>{galleryData.text}</p>
       </TextBlock>
       <Gallery category={category} numberOfImages={galleryData.images} />
+      <Footer />
     </>
   );
 };
