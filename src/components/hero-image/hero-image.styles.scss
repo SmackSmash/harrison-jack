@@ -1,9 +1,10 @@
+@import '../../sass/mixins';
+
 .hero {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  margin-bottom: 1px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -30,6 +31,10 @@
     height: 33.33%;
     align-items: flex-end;
 
+    @include mobile {
+      padding: 0;
+    }
+
     &--right {
       justify-content: flex-end;
     }
@@ -46,6 +51,12 @@
       transition: all 0.7s cubic-bezier(0.35, 0.94, 0.46, 0.96);
       transform: translateY(500px);
       overflow: hidden;
+
+      @include mobile {
+        font-size: 1rem;
+        letter-spacing: 0.5rem;
+        padding: 1rem;
+      }
 
       & span {
         display: inline-block;
@@ -88,6 +99,10 @@
     &--up {
       margin-top: 4rem;
       align-self: flex-start;
+
+      @include mobile {
+        margin-top: 2rem;
+      }
     }
 
     &--down {
@@ -103,6 +118,10 @@
       width: 60px;
       fill: #fff;
       filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.3));
+
+      @include mobile {
+        width: 40px;
+      }
     }
   }
 }

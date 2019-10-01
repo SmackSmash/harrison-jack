@@ -9,13 +9,16 @@
   height: 100%;
 
   @include mobile {
-    flex-direction: column;
+    flex-wrap: wrap;
   }
 
   & li {
     padding: 0;
-    height: 100%;
     transition: line-height 0.3s ease-out;
+
+    @include mobile {
+      width: 50%;
+    }
 
     & a {
       color: #fff;
@@ -30,6 +33,11 @@
       padding: 0 15px;
       transition: all 0.2s ease-in-out;
 
+      @include mobile {
+        text-align: center;
+        padding: 1rem;
+      }
+
       &:hover {
         background: rgba(0, 0, 0, 0.4);
       }
@@ -43,19 +51,15 @@
     width: 193px;
     overflow: hidden;
     transition: all 0.1s ease-in-out;
+    height: 100px;
 
     @include mobile {
-      order: -1;
-      width: 100%;
+      display: none;
     }
 
     & .logo {
       fill: #fff;
       margin: 0 10px;
-
-      @include mobile {
-        width: 150px;
-      }
     }
   }
 }

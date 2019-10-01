@@ -1,9 +1,19 @@
+@import '../../sass/mixins';
+
 .about-container {
   display: flex;
   justify-content: space-between;
 
+  @include mobile {
+    flex-direction: column-reverse;
+  }
+
   & div {
     max-width: 48%;
+
+    @include mobile {
+      max-width: 100%;
+    }
   }
 
   & img {

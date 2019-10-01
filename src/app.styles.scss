@@ -71,6 +71,7 @@ input:-webkit-autofill:active {
 
     @include mobile {
       padding-right: 80px;
+      font-size: 1.5rem;
     }
 
     &:before {

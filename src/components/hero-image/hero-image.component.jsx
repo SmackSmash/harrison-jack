@@ -16,9 +16,7 @@ const HeroImage = ({ imageSrc, title, last, right, link, first }) => {
   const loadImage = () => {
     if (!showImage) {
       const image = new Image();
-      image.onload = () => {
-        setShowImage(true);
-      };
+      image.onload = () => setShowImage(true);
       image.src = imageSrc;
     }
   };
