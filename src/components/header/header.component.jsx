@@ -8,6 +8,7 @@ const Header = props => {
   const headerRef = useRef(null);
 
   const [sticky, setSticky] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     window.onscroll = _.throttle(() => {
@@ -20,10 +21,13 @@ const Header = props => {
   });
 
   return (
-    <header ref={headerRef} className={`header${sticky ? ' sticky' : ''}`}>
+    <header
+      ref={headerRef}
+      className={`header${sticky ? ' sticky' : ''}${mobileMenuOpen ? ' open' : ''}`}
+    >
       <nav>
-        <Navigation />
-        <BurgerIcon />
+        <Navigation mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
+        <BurgerIcon mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
       </nav>
     </header>
   );

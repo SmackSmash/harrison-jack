@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './burger-icon.styles.scss';
 
-const BurgerIcon = props => {
-  const [active, setActive] = useState(false);
-
+const BurgerIcon = ({ mobileMenuOpen, setMobileMenuOpen }) => {
   return (
-    <button className={`menu-button${active ? ' active' : ''}`} onClick={() => setActive(!active)}>
+    <button
+      className={`menu-button${mobileMenuOpen ? ' active' : ''}`}
+      onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+    >
       <div className="menu-button__burger-icon"></div>
     </button>
   );
