@@ -15,14 +15,13 @@
 
   @include mobile {
     position: fixed;
-    height: 100vh;
-    width: 50%;
-    right: 0;
-    transform: translateX(100%);
+    width: 100%;
+    left: 0;
+    transform: translateY(-100%);
     transition: transform 0.25s ease;
 
     &.open {
-      transform: translateX(0%);
+      transform: translateY(0%);
     }
   }
 

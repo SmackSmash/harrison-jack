@@ -46,10 +46,16 @@
 
     @include mobile {
       order: -1;
+      width: 100%;
     }
-  }
-  & .logo {
-    fill: #fff;
-    margin: 0 10px;
+
+    & .logo {
+      fill: #fff;
+      margin: 0 10px;
+
+      @include mobile {
+        width: 150px;
+      }
+    }
   }
 }

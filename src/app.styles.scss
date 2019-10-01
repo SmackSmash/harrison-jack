@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
+@import './sass//mixins';
 
 @keyframes fadein {
   from {
@@ -45,27 +46,37 @@ input:-webkit-autofill:active {
   max-width: 1000px;
   min-height: calc(100vh - 51px);
   margin: 0 auto;
-  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   padding: 100px 2rem;
   animation: fadein 0.5s;
 
+  @include mobile {
+    padding-top: 0;
+  }
+
   & h1 {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
     position: relative;
     text-transform: uppercase;
     letter-spacing: 0.5rem;
-    display: inline-block;
+    display: flex;
     width: 100%;
     padding: 4rem 0 2rem;
     font-weight: 300;
     font-size: 2rem;
+    line-height: 2.5rem;
     margin-bottom: 3rem;
     animation: slidein 0.5s;
 
+    @include mobile {
+      padding-right: 80px;
+    }
+
     &:before {
       content: '// ';
+      line-height: 2.5rem;
+      padding-right: 1rem;
     }
 
     &:after {
