@@ -9,20 +9,18 @@
     display: block;
     outline: none;
     border: none;
-    background: rgba(0, 0, 0, 0.6);
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     width: 50px;
     height: 50px;
     cursor: pointer;
     position: absolute;
-    top: calc(100% + 20px);
-    right: 20px;
-    border-radius: 100%;
+    top: calc(100% + 10px);
+    right: 10px;
+    background: transparent;
 
     &__burger-icon {
       width: 22px;
-      height: 3px;
-      background: #fff;
+      height: 2px;
+      background: rgba(0, 0, 0, 0.5);
       position: relative;
       left: 8px;
       transition: all 0.3s 0.25s ease-in-out;
@@ -30,8 +28,8 @@
       &:before {
         content: '';
         width: 22px;
-        height: 3px;
-        background: #fff;
+        height: 2px;
+        background: rgba(0, 0, 0, 0.5);
         position: absolute;
         top: -8px;
         left: 0;
@@ -41,8 +39,8 @@
       &:after {
         content: '';
         width: 22px;
-        height: 3px;
-        background: #fff;
+        height: 2px;
+        background: rgba(0, 0, 0, 0.5);
         position: absolute;
         bottom: -8px;
         left: 0;
