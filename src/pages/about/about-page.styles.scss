@@ -18,5 +18,11 @@
 
   & img {
     max-width: 100%;
+
+    @include mobile {
+      max-width: 70%;
+      display: block;
+      margin: 0 auto 16px;
+    }
   }
 }

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
-@import './sass//mixins';
+@import './sass/mixins';
 
 @keyframes fadein {
   from {
@@ -63,21 +63,23 @@ input:-webkit-autofill:active {
     display: flex;
     width: 100%;
     padding: 4rem 0 2rem;
-    font-weight: 300;
+    font-weight: 500;
     font-size: 2rem;
     line-height: 2.5rem;
     margin-bottom: 3rem;
     animation: slidein 0.5s;
+    color: #999;
 
     @include mobile {
       font-size: 1.3rem;
-      font-weight: 400;
+      font-weight: 600;
       letter-spacing: 0.3rem;
       padding: 4rem 0 0;
     }
 
     &:before {
       content: '// ';
+      color: #999;
       line-height: 2.5rem;
       padding-right: 1rem;
     }

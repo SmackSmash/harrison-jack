@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import MobileLogo from '../../components/mobile-logo/mobile-logo.component';
 import HeroImage from '../../components/hero-image/hero-image.component';
 import TextBlock from '../../components/text-block/text-block.component';
 import Gallery from '../../components/gallery/gallery.component';
@@ -17,6 +18,7 @@ const FoodPage = ({
       <Helmet>
         <title>{`${galleryData.title} Gallery`}</title>
       </Helmet>
+      <MobileLogo />
       <HeroImage first imageSrc={require(`../../assets/images/galleries/${category}/large.jpg`)} />
       <TextBlock>
         <p>{galleryData.text}</p>
