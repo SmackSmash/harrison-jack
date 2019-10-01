@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import MobileLogo from '../../components/mobile-logo/mobile-logo.component';
 import HeroImage from '../../components/hero-image/hero-image.component';
 import advertisingImage from '../../assets/images/galleries/advertising/large.jpg';
 import interiorImage from '../../assets/images/galleries/interiors/large.jpg';
@@ -17,6 +18,7 @@ const HomePage = props => {
       <Helmet>
         <title>Home</title>
       </Helmet>
+      <MobileLogo />
       <HeroImage title="advertising" first right imageSrc={advertisingImage} />
       <HeroImage title="interiors" imageSrc={interiorImage} />
       <HeroImage title="chalets" right imageSrc={chaletImage} />

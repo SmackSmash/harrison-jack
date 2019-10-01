@@ -1,0 +1,23 @@
+@import '../../sass/mixins';
+
+.mobile-logo {
+  display: none;
+}
+
+@include mobile {
+  .mobile-logo {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    width: 150px;
+    overflow: hidden;
+    top: 20px;
+    left: 20px;
+
+    svg {
+      opacity: 0.5;
+      width: 100%;
+      height: auto;
+    }
+  }
+}

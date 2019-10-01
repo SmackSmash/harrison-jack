@@ -1,4 +1,5 @@
 import React from 'react';
+import MobileLogo from '../../components/mobile-logo/mobile-logo.component';
 import ContactForm from '../../components/contact-form/contact-form.component';
 import Footer from '../../components/footer/footer.component';
 import './contact-page.styles.scss';
@@ -6,6 +7,7 @@ import './contact-page.styles.scss';
 const ContactPage = props => {
   return (
     <>
+      <MobileLogo />
       <div className="non-image-page">
         <h1>Get in touch</h1>
         <div className="contact-container">

@@ -52,7 +52,7 @@ input:-webkit-autofill:active {
   animation: fadein 0.5s;
 
   @include mobile {
-    padding-top: 0;
+    padding-top: 50px;
   }
 
   & h1 {
@@ -70,8 +70,10 @@ input:-webkit-autofill:active {
     animation: slidein 0.5s;
 
     @include mobile {
-      padding-right: 80px;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
+      font-weight: 400;
+      letter-spacing: 0.3rem;
+      padding: 4rem 0 0;
     }
 
     &:before {

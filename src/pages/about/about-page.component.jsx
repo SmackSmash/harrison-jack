@@ -1,10 +1,12 @@
 import React from 'react';
+import MobileLogo from '../../components/mobile-logo/mobile-logo.component';
 import Footer from '../../components/footer/footer.component';
 import './about-page.styles.scss';
 
 const AboutPage = props => {
   return (
     <>
+      <MobileLogo />
       <div className="non-image-page">
         <h1>A little bit about us</h1>
         <div className="about-container">
